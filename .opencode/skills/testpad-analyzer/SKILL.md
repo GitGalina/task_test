@@ -1,6 +1,6 @@
 ---
 name: testpad-analyzer
-description: Работа с репозиторием TestPad Analyzer (Flask + Playwright, анализ тестов Online Test Pad). Используй при любом изменении кода этого проекта: запуск сервера, правки server.py / otp_client.py / analyzer.py / static/, обновление README.md, проверка ошибок, подготовка к публикации на GitHub.
+description: "Работа с репозиторием TestPad Analyzer (Flask + Playwright, анализ тестов Online Test Pad). Используй при любом изменении кода этого проекта: запуск сервера, правки server.py / otp_client.py / analyzer.py / static/, обновление README.md, проверка ошибок, подготовка к публикации на GitHub."
 ---
 
 # TestPad Analyzer — навык работы с репозиторием
