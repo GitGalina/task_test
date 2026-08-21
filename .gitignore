@@ -1,0 +1,3 @@
+__pycache__/
+.playwright-mcp/
+data/otp_state.json

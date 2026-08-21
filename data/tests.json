@@ -1,0 +1,302 @@
+{
+  "disciplines": [
+    {
+      "name": "Вычислительная техника",
+      "folder": "ВТ",
+      "tests": [
+        {
+          "name": "ВТ ТЕСТ 1: Асинхронный RS-триггер",
+          "url": "https://onlinetestpad.com/6subw4sjcu3ju"
+        },
+        {
+          "name": "ВТ ТЕСТ 2: Синхронный RS-триггер",
+          "url": "https://onlinetestpad.com/4jbodloa6ukbu"
+        },
+        {
+          "name": "ВТ ТЕСТ 3: ТТ-триггер (двухступенчатый)",
+          "url": "https://onlinetestpad.com/x7oxz4gwqmu5o"
+        },
+        {
+          "name": "ВТ ТЕСТ 4: Т-триггер (счётный)",
+          "url": "https://onlinetestpad.com/shxkgmqajaxpa"
+        },
+        {
+          "name": "ВТ ТЕСТ 5: D-триггер (задержки / data)",
+          "url": "https://onlinetestpad.com/eqvktcmxab2as"
+        },
+        {
+          "name": "ВТ ТЕСТ 6: JK-триггер",
+          "url": "https://onlinetestpad.com/6pcjucu6mqq4q"
+        }
+      ]
+    },
+    {
+      "name": "Дискретная математика",
+      "folder": "ДМ",
+      "tests": [
+        {
+          "name": "ДМ 01 Тест Множества",
+          "url": "https://onlinetestpad.com/usczajkzt45uq"
+        },
+        {
+          "name": "ДМ 02 Тест Множества",
+          "url": "https://onlinetestpad.com/rgmuxit4aofro"
+        },
+        {
+          "name": "ДМ 03 Тест Множества",
+          "url": "https://onlinetestpad.com/r5i4miamcz2ms"
+        },
+        {
+          "name": "ДМ 04 Тест Теория отношений",
+          "url": "https://onlinetestpad.com/ghye4ltx62vsu"
+        },
+        {
+          "name": "ДМ 05 Тест Функциональные отношения",
+          "url": "https://onlinetestpad.com/cblkyphhu3bgo"
+        },
+        {
+          "name": "ДМ 06 Тест 1 комбинаторика",
+          "url": "https://onlinetestpad.com/zubirydw2xqcu"
+        },
+        {
+          "name": "ДМ 07 Тест 2 Комбинаторика",
+          "url": "https://onlinetestpad.com/kdte2pw22v2ca"
+        },
+        {
+          "name": "ДМ 08 Тест Основные понятия графов",
+          "url": "https://onlinetestpad.com/zaajagto6amec"
+        },
+        {
+          "name": "ДМ 09 Тест Графы",
+          "url": "https://onlinetestpad.com/wlzzltsccklng"
+        }
+      ]
+    },
+    {
+      "name": "Информационные технологии",
+      "folder": "ИТ",
+      "tests": [
+        {
+          "name": "ИТ 0.1 Тест информация и ИТ",
+          "url": "https://onlinetestpad.com/bwgi75tc6x4pw"
+        },
+        {
+          "name": "ИТ 0.2 HTML: Базовые теги и сущности",
+          "url": "https://onlinetestpad.com/q6s3riv3zvvey"
+        },
+        {
+          "name": "ИТ 0.3 CSS",
+          "url": "https://onlinetestpad.com/jaucpuzefq5x2"
+        },
+        {
+          "name": "ИТ 1.0 ИИ",
+          "url": "https://onlinetestpad.com/vmeslagarixfy"
+        },
+        {
+          "name": "ИТ 1.1 «вайб кодинг» — с юмором",
+          "url": "https://onlinetestpad.com/pgmx5s73cfnfu"
+        },
+        {
+          "name": "ИТ 2.1 MarkDown",
+          "url": "https://onlinetestpad.com/sl7nmbo33unwm"
+        },
+        {
+          "name": "ИТ 2.2 Git, GitHub",
+          "url": "https://onlinetestpad.com/efoczuacyr3r2"
+        },
+        {
+          "name": "ИТ 3.0 Облачные технологии",
+          "url": "https://onlinetestpad.com/vkomgbfnvsyge"
+        },
+        {
+          "name": "ИТ 4.0 Основы ИТ-экосистемы",
+          "url": "https://onlinetestpad.com/c4mvdebrl5ubq"
+        },
+        {
+          "name": "ИТ 5.0 Кибербезопасность Цифровая гигиена Кибер гигиена",
+          "url": "https://onlinetestpad.com/3xpqzo5nonysa"
+        }
+      ]
+    },
+    {
+      "name": "Компьютерное моделирование",
+      "folder": "КМ",
+      "tests": [
+        {
+          "name": "КМ ИТОГОВЫЙ ТЕСТ",
+          "url": "https://onlinetestpad.com/pfr4s347ckrsc"
+        }
+      ]
+    },
+    {
+      "name": "Математическое моделирование",
+      "folder": "ММ",
+      "tests": [
+        {
+          "name": "М/М 01 Тест Основные понятия теории моделирования",
+          "url": "https://onlinetestpad.com/emvv7spqymnyu"
+        },
+        {
+          "name": "М/М 02 Тест Основные понятия теории моделирования",
+          "url": "https://onlinetestpad.com/a4fb2rdyepoqg"
+        },
+        {
+          "name": "ММ 03 Тест Построение модели по вербальному описанию",
+          "url": "https://onlinetestpad.com/xcicj7o5hgu3e"
+        },
+        {
+          "name": "ММ 04 Тест Аналитическая модель",
+          "url": "https://onlinetestpad.com/tqnkgplkgwg7e"
+        },
+        {
+          "name": "ММ 06-1 Тест Построение модели по данным экспериментов",
+          "url": "https://onlinetestpad.com/ajy3t45brdg6k"
+        },
+        {
+          "name": "ММ 06-2 Тест Построение модели по данным экспериментов",
+          "url": "https://onlinetestpad.com/sycid2dnyp5b2"
+        },
+        {
+          "name": "ММ 06-3 Тест Построение модели по данным экспериментов",
+          "url": "https://onlinetestpad.com/dbe5ct5c73zgg"
+        },
+        {
+          "name": "ММ 08-1Тест Моделирование случайных величин и случайных событий",
+          "url": "https://onlinetestpad.com/anzinqenfcats"
+        },
+        {
+          "name": "ММ 08-2Тест Моделирование случайных величин и случайных событий",
+          "url": "https://onlinetestpad.com/z3xltcixj7s5s"
+        },
+        {
+          "name": "ММ 08-3 Тест Моделирование случайных величин и случайных событий",
+          "url": "https://onlinetestpad.com/npqqvxllizpls"
+        },
+        {
+          "name": "ММ 08-4Тест Моделирование случайных величин и случайных событий",
+          "url": "https://onlinetestpad.com/ikiaqv5ja2jrg"
+        },
+        {
+          "name": "ММ 09-1Тест Модел.случ.процессов",
+          "url": "https://onlinetestpad.com/53hyffnufdzju"
+        },
+        {
+          "name": "ММ 09-2 Тест Модел.случ.процессов",
+          "url": "https://onlinetestpad.com/vqr4xbn6af5pw"
+        },
+        {
+          "name": "ММ 10 Тест Моделирование СМО",
+          "url": "https://onlinetestpad.com/6lwc6tjknncei"
+        },
+        {
+          "name": "ММ 11 Тест Искусственные нейронные сети",
+          "url": "https://onlinetestpad.com/bm4m43zuexqdq"
+        },
+        {
+          "name": "ММ 12 Тест Многослойные персептроны",
+          "url": "https://onlinetestpad.com/4zrodjtkfwr32"
+        },
+        {
+          "name": "ММ 13 Тест Вероятностные нейросети и сети Кохонена",
+          "url": "https://onlinetestpad.com/rwgpt3iz774xc"
+        },
+        {
+          "name": "ММ 14 Тест Рекуррентные нейросети",
+          "url": "https://onlinetestpad.com/tku5mp77mb4fq"
+        }
+      ]
+    },
+    {
+      "name": "Основы алгоритмизации и программирования",
+      "folder": "ОАИП",
+      "tests": [
+        {
+          "name": "ОАИП 01 Тест циклы",
+          "url": "https://onlinetestpad.com/wqbal4bju3x5k"
+        },
+        {
+          "name": "ОАИП 02 Тест массивы",
+          "url": "https://onlinetestpad.com/2jm4dw6svryi2"
+        },
+        {
+          "name": "ОАИП 03 Тест методы1",
+          "url": "https://onlinetestpad.com/c7kmvaxhhnbzy"
+        },
+        {
+          "name": "ОАИП 04 Тест методы2",
+          "url": "https://onlinetestpad.com/csvqvn5ni6au2"
+        },
+        {
+          "name": "ОАИП 05 Тест Коллекции: Список(List)",
+          "url": "https://onlinetestpad.com/rolx3nl2tcbgw"
+        },
+        {
+          "name": "ОАИП 06 Тест Перечисления (Enum)",
+          "url": "https://onlinetestpad.com/tj4wndjgwlfl6"
+        },
+        {
+          "name": "ОАИП 07 Тест Классы",
+          "url": "https://onlinetestpad.com/nzlgm6uzv5d2s"
+        },
+        {
+          "name": "ОАИП 08 Файлы",
+          "url": "https://onlinetestpad.com/l464pqzjb2rt2"
+        },
+        {
+          "name": "ОАИП 08 Тест Конструкторы",
+          "url": "https://onlinetestpad.com/krzui4o6e4cya"
+        },
+        {
+          "name": "ОАИП 09 Тест Свойства",
+          "url": "https://onlinetestpad.com/fdvtju5nm4aue"
+        },
+        {
+          "name": "ОАИП 10 Структуры",
+          "url": "https://onlinetestpad.com/slrtrapu7dybw"
+        },
+        {
+          "name": "ОАИП 11 Тест модификатор static",
+          "url": "https://onlinetestpad.com/qedac7ioolklm"
+        },
+        {
+          "name": "ОАИП 12 Тест Наследование",
+          "url": "https://onlinetestpad.com/i4lcqu7gj5ojw"
+        },
+        {
+          "name": "ОАИП 13 Основные принципы ООП",
+          "url": "https://onlinetestpad.com/6qzasjwq5ctze"
+        }
+      ]
+    },
+    {
+      "name": "Численные методы",
+      "folder": "ЧМ",
+      "tests": [
+        {
+          "name": "ЧМ 01 Тест АП,ОП",
+          "url": "https://onlinetestpad.com/j7fbxim5yrefu"
+        },
+        {
+          "name": "ЧМ 02 Тест Погрешности",
+          "url": "https://onlinetestpad.com/tpepkavt2ybso"
+        },
+        {
+          "name": "ЧМ 03 Тест Решение нелин.уравнений",
+          "url": "https://onlinetestpad.com/5a57ho4lemkf6"
+        },
+        {
+          "name": "ЧМ 04 Тест СЛАУ1",
+          "url": "https://onlinetestpad.com/besfjjfphe73u"
+        },
+        {
+          "name": "ЧМ 05 Тест СЛАУ Крамера",
+          "url": "https://onlinetestpad.com/yk2ahzcm3npgq"
+        },
+        {
+          "name": "ЧМ 06 Тест СЛАУ2",
+          "url": "https://onlinetestpad.com/x7qqwku5ziwrs"
+        }
+      ]
+    }
+  ]
+}

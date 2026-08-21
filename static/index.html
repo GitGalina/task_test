@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TestPad Analyzer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <span class="brand-mark">TP</span>
+      <span class="brand-text">TestPad<br>Analyzer</span>
+    </div>
+    <div class="mode-badge" id="modeBadge">Анализ качества<br>по публичной ссылке</div>
+    <div class="conn" id="connBlock" hidden>
+      <div class="conn-row">
+        <span class="dot" id="connDot"></span>
+        <span id="connText">Не подключено</span>
+      </div>
+      <button class="btn btn-small" id="btnDisconnect" hidden>Отключиться</button>
+    </div>
+    <nav class="nav">
+      <button class="nav-item active" data-view="select">1. Дисциплины и тесты</button>
+      <button class="nav-item" data-view="quality">2. Анализ теста</button>
+      <button class="nav-item" data-view="analysis">3. Анализ результатов</button>
+      <button class="nav-item" data-view="help">Как это работает</button>
+    </nav>
+    <div class="sidebar-foot" id="sidebarFoot">Список тестов — из Excel-файла<br>«СПИСОК тестов TestPad.xlsx»</div>
+  </aside>
+
+  <main class="main">
+
+    <header class="topbar">
+      <div>
+        <h1 id="testTitle">Анализ тестов Online Test Pad</h1>
+        <div id="testMeta" class="muted">Выберите тест или вставьте ссылку</div>
+      </div>
+      <div class="topbar-actions">
+        <button id="btnConnect" class="btn">Подключить кабинет</button>
+        <button id="btnSelectTest" class="btn btn-primary">Дисциплины и тесты</button>
+        <button class="btn" id="btnExport" title="Печать/сохранение отчёта в PDF">Экспорт PDF</button>
+      </div>
+    </header>
+
+    <!-- Вход в onlinetestpad (для реальной статистики) -->
+    <section id="view-login" class="view hidden">
+      <div class="panel login-panel">
+        <h2 class="panel-title">Вход в Online Test Pad</h2>
+        <p class="muted">Нужен для загрузки реальных результатов теста (статистика ответов студентов). Пароль используется только для входа в сессию приложения и нигде не сохраняется.</p>
+        <form id="loginForm" class="login-form" autocomplete="off">
+          <label>E-mail
+            <input type="email" id="loginEmail" name="email" required placeholder="you@example.com">
+          </label>
+          <label>Пароль
+            <span class="pass-wrap">
+              <input type="password" id="loginPassword" name="password" required placeholder="••••••••">
+              <button type="button" class="btn-pass-toggle" id="btnTogglePass" title="Показать/скрыть пароль" aria-pressed="false">👁</button>
+            </span>
+          </label>
+          <button type="submit" class="btn btn-primary" id="loginSubmit">Войти</button>
+        </form>
+        <div id="loginError" class="login-error" hidden></div>
+      </div>
+    </section>
+
+    <!-- Шаг 1-2: выбор дисциплины и теста -->
+    <section id="view-select" class="view">
+      <div class="panel">
+        <h2 class="panel-title">Дисциплины и тесты <span class="panel-sub">из Excel-файла «СПИСОК тестов TestPad.xlsx»</span></h2>
+        <p class="muted">Клик по тесту запускает анализ качества: приложение обходит тест по публичной ссылке, собирает вопросы и оценивает каждый локальными эвристиками.</p>
+      </div>
+      <div class="cols">
+        <div class="panel">
+          <h2 class="panel-title">Дисциплина <span class="panel-sub">выберите папку</span></h2>
+          <ul id="disciplineList" class="list-cards"></ul>
+        </div>
+        <div class="panel">
+          <h2 class="panel-title">Тест <span class="panel-sub">выберите тест в папке</span></h2>
+          <ul id="testList" class="list-cards"></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Шаг 2: анализ качества теста -->
+    <section id="view-quality" class="view hidden">
+      <div class="panel">
+        <h2 class="panel-title">Анализ качества теста</h2>
+        <p class="muted">Результат прохождения при этом не записывается: тест останавливается до кнопки «Завершить». Незавершённую попытку можно продолжить в обычном режиме.</p>
+        <div class="url-row">
+          <input id="qaUrl" type="url" placeholder="https://onlinetestpad.com/..." class="search grow">
+          <button id="btnQaRun" class="btn btn-primary">Анализировать</button>
+        </div>
+        <div id="qaStatus" class="qa-status" hidden>
+          <span class="spinner"></span>
+          <div>
+            <div id="qaStatusText"></div>
+            <div class="muted" id="qaStatusSub">Обход теста занимает до минуты…</div>
+          </div>
+        </div>
+        <div id="qaError" class="login-error" hidden></div>
+      </div>
+      <div id="qaResult" hidden>
+        <div class="cards" id="qaCards"></div>
+        <div class="grid2">
+          <div class="panel"><h2 class="panel-title">Типы вопросов</h2><div id="qaTypes" class="qa-types"></div></div>
+          <div class="panel"><h2 class="panel-title">Сложность <span class="panel-sub">оценка 1–5</span></h2><div id="qaDifficulty" class="qa-types"></div></div>
+        </div>
+        <div class="panel">
+          <h2 class="panel-title">Ключевые понятия темы</h2>
+          <div id="qaKeywords" class="kw-row"></div>
+        </div>
+        <div class="panel panel-accent">
+          <h2 class="panel-title">Рекомендации</h2>
+          <div id="qaRecommendations" class="rec-list"></div>
+        </div>
+        <div class="panel">
+          <div class="panel-head">
+            <h2 class="panel-title">Вопросы <span class="panel-sub">нажмите, чтобы развернуть</span></h2>
+            <div class="qa-filter" id="qaFilter">
+              <button class="btn btn-small active" data-verdict="all">Все</button>
+              <button class="btn btn-small" data-verdict="alert">Требуют правки</button>
+              <button class="btn btn-small" data-verdict="warn">Замечания</button>
+              <button class="btn btn-small" data-verdict="ok">Норма</button>
+            </div>
+          </div>
+          <div id="qaQuestions" class="qa-questions"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Демо: анализ результатов группы -->
+    <section id="view-analysis" class="view hidden">
+      <div class="panel">
+        <h2 class="panel-title">Анализ результатов группы</h2>
+        <p class="muted">По умолчанию показывает тест, выбранный в разделе «Дисциплины и тесты» (если он проанализирован). Можно выбрать любой встроенный демо-тест.</p>
+        <select id="demoTestSelect" class="search"></select>
+        <div class="url-row" style="margin-top:10px">
+          <button id="btnLoadStats" class="btn btn-primary">Загрузить реальные результаты из кабинета</button>
+          <button id="btnLoadDemo" class="btn">Вернуть демо-данные</button>
+        </div>
+        <div id="statsStatus" class="qa-status" hidden>
+          <span class="spinner"></span>
+          <div>
+            <div id="statsStatusText">Загружаем статистику…</div>
+            <div class="muted" id="statsStatusSub">Чтение ключа ответов и таблицы студентов занимает несколько секунд</div>
+          </div>
+        </div>
+        <div id="demoNotice" class="login-error" hidden></div>
+      </div>
+      <div id="demoResults">
+      <div class="cards" id="summaryCards"></div>
+      <div class="grid2">
+        <div class="panel">
+          <h2 class="panel-title">Распределение результатов</h2>
+          <div id="scoreChart" class="chart"></div>
+        </div>
+        <div class="panel">
+          <h2 class="panel-title">Сложные вопросы <span class="panel-sub">от худшего к лучшему</span></h2>
+          <div id="problemQuestions" class="problem-list"></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-head">
+          <h2 class="panel-title">Студент × вопрос <span class="panel-sub">зелёный — верно, красный — ошибка</span></h2>
+          <input id="studentFilter" type="search" placeholder="Поиск по студенту…" class="search">
+        </div>
+        <div class="table-wrap">
+          <table class="matrix" id="matrixTable"></table>
+        </div>
+      </div>
+
+      <div class="grid2">
+        <div class="panel">
+          <h2 class="panel-title">Проблемные темы <span class="panel-sub">по проценту верных</span></h2>
+          <div id="topicsPanel" class="topic-bars"></div>
+        </div>
+        <div class="panel">
+          <h2 class="panel-title">Повторяющиеся ошибки</h2>
+          <div id="repeatsPanel" class="repeats"></div>
+        </div>
+      </div>
+
+      <div class="panel panel-accent">
+        <h2 class="panel-title">Выводы и рекомендации преподавателю</h2>
+        <div id="recommendations" class="rec-list"></div>
+      </div>
+      </div>
+    </section>
+
+    <!-- Справка -->
+    <section id="view-help" class="view hidden">
+      <div class="panel">
+        <h2 class="panel-title">Как это работает</h2>
+        <ol class="steps">
+          <li><b>Excel-файл.</b> Список тестов живёт в <code>СПИСОК тестов TestPad.xlsx</code> (папка, дисциплина, название, ссылка). Приложение читает его автоматически и обновляет <code>data/tests.json</code>.</li>
+          <li><b>Обход теста.</b> По ссылке приложение открывает тест в своём браузере и проходит его, собирая тексты вопросов и вариантов ответов. Важно: результат НЕ записывается — обход останавливается до кнопки «Завершить», поэтому результаты учеников не портятся.</li>
+          <li><b>Анализ качества.</b> Локальные эвристики оценивают каждый вопрос: корректность формулировки и вариантов, профессионализм (эмодзи, «все вышеперечисленное», длина вариантов), сложность (1–5) и соответствие теме теста.</li>
+          <li><b>Рекомендации.</b> Приложение подсказывает, какие вопросы упростить/усложнить, какие типы добавить (множественный выбор, ввод текста, соответствие) и не отклоняются ли вопросы от заявленной темы.</li>
+          <li><b>Реальные результаты.</b> В разделе «Анализ результатов» после подключения кабинета можно загрузить реальную статистику выбранного теста: ключ ответов и матрицу «студент × вопрос» из onlinetestpad. Приложение показывает сводные метрики, проблемные вопросы с верными ответами, темы и повторяющиеся ошибки.</li>
+        </ol>
+        <p class="muted">Без подключения кабинета раздел «Анализ результатов» работает на встроенных демо-данных.</p>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
